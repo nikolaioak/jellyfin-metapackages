@@ -72,6 +72,11 @@ case "${BASE_OS}" in
         REPO_OS="ubuntu"
         VERSION="$( awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release )"
     ;;
+    pop)
+        # Pop_OS uses our Ubuntu repository
+        REPO_OS="ubuntu"
+        VERSION="$( awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release )"
+    ;;
     *)
         REPO_OS="${BASE_OS}"
         VERSION="$( awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release )"
